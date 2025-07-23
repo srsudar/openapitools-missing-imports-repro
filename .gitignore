@@ -1,0 +1,6 @@
+# We build this, but we don't check it in. To check things in, we need to move
+# them to locations in their own repositories. This can hopefully be improved
+# with true code sharing.
+dist/
+generated/
+node_modules/
