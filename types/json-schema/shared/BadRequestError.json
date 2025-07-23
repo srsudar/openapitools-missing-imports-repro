@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "errorCode": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string",
+            "enum": ["body", "query", "headers", "params"]
+          }
+        },
+        "required": ["location"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["errors"],
+  "additionalProperties": false
+}

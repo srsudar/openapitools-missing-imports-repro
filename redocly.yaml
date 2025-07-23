@@ -1,0 +1,8 @@
+extends:
+  - recommended
+
+plugins:
+  - ./redocly/decorators/remove-json-schema-properties.js
+
+decorators:
+  remove-json-schema-properties/remove-schema-and-id: on

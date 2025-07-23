@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GetIslandPostsResponse",
+  "type": "object",
+  "properties": {
+    "nextCursor": {
+      "type": ["string", "null"]
+    }
+  },
+  "required": ["posts"],
+  "additionalProperties": false
+}

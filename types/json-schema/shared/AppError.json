@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "status": { "type": "number" },
+    "userVisible": { "type": "boolean" },
+    "messageHtml": { "type": ["string", "null"] },
+    "type": { "type": ["string", "null"] },
+    "metadata": { "type": ["object", "null"] },
+    "response": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
