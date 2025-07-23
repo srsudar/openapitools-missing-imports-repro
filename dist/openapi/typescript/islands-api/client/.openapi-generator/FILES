@@ -1,0 +1,12 @@
+.openapi-generator-ignore
+apis/ExamplesApi.ts
+apis/index.ts
+index.ts
+models/GetPosts200Response.ts
+models/GetPosts400Response.ts
+models/GetPosts400ResponseOneOf.ts
+models/GetPosts400ResponseOneOf1.ts
+models/GetPosts400ResponseOneOf1Response.ts
+models/GetPosts400ResponseOneOfErrorsInner.ts
+models/index.ts
+runtime.ts

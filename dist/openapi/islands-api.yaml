@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: Example API
+  version: 1.0.0
+  license:
+    name: UNLICENSED
+    url: https://example.com/tos
+servers:
+  - url: https://api.example.com
+    description: Main API server
+paths:
+  /api/v1/islands/cms/posts:
+    get:
+      tags:
+        - Examples
+      operationId: GetPosts
+      summary: Get all posts
+      security: []
+      responses:
+        '200':
+          description: List of posts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetIslandPostsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                  - $ref: '#/components/schemas/BadRequestError'
+                  - $ref: '#/components/schemas/AppError'
+components:
+  schemas:
+    GetIslandPostsResponse:
+      type: object
+      properties:
+        nextCursor:
+          type:
+            - string
+            - 'null'
+      required:
+        - posts
+      additionalProperties: false
+    BadRequestError:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              path:
+                type: string
+              message:
+                type: string
+              errorCode:
+                type: string
+              location:
+                type: string
+                enum:
+                  - body
+                  - query
+                  - headers
+                  - params
+            required:
+              - location
+            additionalProperties: true
+      required:
+        - errors
+      additionalProperties: false
+    AppError:
+      type: object
+      properties:
+        status:
+          type: number
+        userVisible:
+          type: boolean
+        messageHtml:
+          type:
+            - string
+            - 'null'
+        type:
+          type:
+            - string
+            - 'null'
+        metadata:
+          type:
+            - object
+            - 'null'
+        response:
+          type: object
+          properties:
+            message:
+              type: string
+          additionalProperties: true
+      additionalProperties: true
